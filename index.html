@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNYSCK1HHQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BNYSCK1HHQ');
+  </script>
+  <title>Aura — Agentes de IA para negocios</title>
+  <meta name="description" content="Aura es un agente de IA que responde, agenda, vende y gestiona por vos. En WhatsApp, Instagram, web y email — 24/7.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aura — Agentes de IA para negocios">
+  <meta property="og:description" content="Tu negocio atiende solo. Agentes de IA que responden, agendan, venden y gestionan por vos — 24/7.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Aura">
+  <meta property="og:url" content="https://aura-landing-three.vercel.app">
+  <meta property="og:image" content="https://aura-landing-three.vercel.app/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aura — Agentes de IA que atienden tu negocio 24/7">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aura — Agentes de IA para negocios">
+  <meta name="twitter:description" content="Tu negocio atiende solo. Agentes de IA que responden, agendan, venden y gestionan por vos — 24/7.">
+  <meta name="twitter:image" content="https://aura-landing-three.vercel.app/og-image.jpg">
+  <!-- Extra SEO -->
+  <meta name="theme-color" content="#2B5E4E">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === RESET & VARS === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    :root {
+      --cream: #F7F5F0;
+      --sage: #2B5E4E;
+      --sage-dark: #1E4538;
+      --sage-light: #EBF2EE;
+      --sage-lighter: #F2F7F4;
+      --amber: #D4883E;
+      --amber-dark: #B87430;
+      --amber-light: #FEF5EB;
+      --charcoal: #1C2024;
+      --text-secondary: #5F6B72;
+      --border: #E2DDD4;
+      --white: #FFFFFF;
+      --whatsapp: #25D366;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --container: 1120px;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --section-pad: clamp(4rem, 8vw, 6rem);
+    }
+
+    /* ==============================
+       2. BASE STYLES
+    ============================== */
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--charcoal);
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2rem);
+    }
+
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.15; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.25rem); color: var(--charcoal); }
+    h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--charcoal); }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--sage);
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.65;
+    }
+    .section-subtitle.centered { margin: 0.75rem auto 0; text-align: center; }
+
+    section { padding: var(--section-pad) 0; position: relative; }
+
+    /* ==============================
+       3. BUTTONS
+    ============================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--sage);
+      color: var(--white);
+      border-color: var(--sage);
+    }
+    .btn-primary:hover {
+      background: var(--sage-dark);
+      border-color: var(--sage-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(43,94,78,0.25);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--sage);
+      border-color: var(--sage);
+    }
+    .btn-secondary:hover {
+      background: var(--sage);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-amber {
+      background: var(--amber);
+      color: var(--white);
+      border-color: var(--amber);
+    }
+    .btn-amber:hover {
+      background: var(--amber-dark);
+      border-color: var(--amber-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212,136,62,0.3);
+    }
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: var(--white);
+      border-color: var(--whatsapp);
+      padding: 16px 40px;
+      font-size: 1.05rem;
+    }
+    .btn-whatsapp:hover {
+      background: #20bd5a;
+      border-color: #20bd5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+    }
+
+    /* ==============================
+       4. NAVIGATION
+    ============================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 0;
+      transition: all 0.35s ease;
+    }
+    nav.scrolled {
+      background: rgba(247,245,240,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.04);
+      padding: 12px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--sage);
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: none;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta {
+      padding: 10px 24px;
+      background: var(--sage);
+      color: var(--white);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: none;
+    }
+    .nav-cta:hover {
+      background: var(--sage-dark);
+      transform: translateY(-1px);
+    }
+    .nav-cta-mobile { display: none; }
+    nav.nav-open {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      box-shadow: none;
+      transition: none;
+    }
+
+    /* Hamburger button — mobile only */
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1001;
+      order: 3;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+    .nav-hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu overlay */
+    .nav-links.mobile-open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--cream);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      animation: fadeIn 0.25s ease;
+    }
+    .nav-links.mobile-open a {
+      font-size: 1.5rem;
+      padding: 16px 0;
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+    .nav-links.mobile-open a:hover {
+      color: var(--sage);
+    }
+    .nav-links.mobile-open .nav-cta-mobile {
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 14px 36px;
+      background: var(--sage);
+      color: var(--white) !important;
+      border-radius: 50px;
+      font-size: 1.1rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+      .nav-hamburger { display: none; }
+      .nav-cta { display: inline-flex; }
+    }
+
+    /* ==============================
+       5. HERO
+    ============================== */
+    .hero {
+      padding: clamp(6.5rem, 12vh, 9rem) 0 clamp(2.5rem, 5vh, 4rem);
+      text-align: center;
+      overflow: visible;
+      background: linear-gradient(180deg, #F0EDE6 0%, var(--cream) 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero-demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(43,94,78,0.15) 0%, transparent 60%);
+      top: -250px;
+      right: -150px;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212,136,62,0.10) 0%, transparent 60%);
+      bottom: -200px;
+      left: -100px;
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: var(--sage-light);
+      color: var(--sage);
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .badge-pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--sage);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.6); }
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 7.5vw, 5rem);
+      color: var(--charcoal);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 0 auto 1.5rem;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .hero-channels {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .channel-pill {
+      padding: 6px 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .hero-trust {
+      display: none;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .hero-trust span {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .hero-trust .trust-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero-demo-picker {
+      margin-top: 1.5rem;
+    }
+    .hero-demo-picker .demo-label {
+      margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 960px) {
+      .hero { padding-top: clamp(5rem, 10vh, 7rem); padding-bottom: clamp(2rem, 4vh, 3rem); }
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .hero-content { text-align: left; }
+      .hero-title { font-size: clamp(3rem, 5vw, 4.8rem); }
+      .hero-subtitle { margin-left: 0; margin-right: 0; max-width: 480px; font-size: 1.15rem; }
+      .hero-ctas { justify-content: flex-start; }
+      .hero-channels { justify-content: flex-start; }
+      .hero-trust { display: flex; }
+      .hero-demo-picker .demo-tabs {
+        justify-content: flex-start;
+      }
+      .hero-demo-picker .demo-tab {
+        padding: 7px 13px;
+        font-size: 0.78rem;
+      }
+      .phone { width: 280px; height: 540px; border-radius: 40px; }
+      .phone-screen { border-radius: 32px; }
+      .phone-stage::before { width: 340px; height: 340px; }
+    }
+
+    /* ==============================
+       6. PROBLEM / STATS
+    ============================== */
+    .problem {
+      background: var(--white);
+    }
+    .problem .container { text-align: center; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .stat-card {
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--cream);
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: var(--sage);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .stat-description {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    @media (min-width: 640px) {
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ==============================
+       7. WHAT IS AURA
+    ============================== */
+    .what-is {
+      background: var(--cream);
+    }
+    .what-is .container { text-align: center; }
+    .what-is-text {
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 1.25rem auto 0;
+    }
+    .transform-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+    .transform-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .transform-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 1.25rem 1.5rem 0.75rem;
+    }
+    .transform-card-icon {
+      font-size: 1.3rem;
+    }
+    .transform-card-title {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+    .transform-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .transform-before, .transform-after {
+      padding: 1rem 1.5rem 1.25rem;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+    .transform-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .transform-before {
+      background: var(--cream);
+      color: var(--text-secondary);
+    }
+    .transform-before .transform-label {
+      color: var(--text-secondary);
+    }
+    .transform-after {
+      background: var(--sage-light);
+      color: var(--sage-dark);
+    }
+    .transform-after .transform-label {
+      color: var(--sage);
+    }
+    .transform-closing {
+      margin-top: 2.5rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      color: var(--charcoal);
+    }
+
+    @media (min-width: 768px) {
+      .transform-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    }
+
+    /* ==============================
+       7b. DASHBOARD SHOWCASE
+    ============================== */
+    .dashboard-showcase {
+      margin-top: clamp(3rem, 6vw, 5rem);
+    }
+    .dashboard-intro {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .dashboard-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+    }
+    .dashboard-subtitle {
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .dashboard-window {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .dashboard-topbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #FAFAF8;
+      border-bottom: 1px solid var(--border);
+    }
+    .dashboard-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .dashboard-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dashboard-dots span:nth-child(1) { background: #FF5F56; }
+    .dashboard-dots span:nth-child(2) { background: #FFBD2E; }
+    .dashboard-dots span:nth-child(3) { background: #27C93F; }
+    .dashboard-url {
+      flex: 1;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 12px;
+    }
+    .dashboard-body {
+      display: flex;
+      min-height: 380px;
+    }
+    .dashboard-sidebar {
+      width: 56px;
+      background: var(--sage-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 0;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .dash-logo {
+      width: 32px;
+      height: 32px;
+      background: var(--sage);
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .dash-nav-item {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      cursor: default;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+    .dash-nav-item.active {
+      background: rgba(255,255,255,0.12);
+      opacity: 1;
+    }
+    .dashboard-main {
+      flex: 1;
+      padding: clamp(16px, 3vw, 24px);
+      overflow: hidden;
+    }
+    .dash-header {
+      margin-bottom: 20px;
+    }
+    .dash-greeting {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: var(--charcoal);
+    }
+    .dash-date {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+    .dash-stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 640px) {
+      .dash-stats-row { grid-template-columns: repeat(4, 1fr); }
+    }
+    .dash-stat {
+      background: var(--sage-lighter);
+      border-radius: 10px;
+      padding: clamp(10px, 2vw, 14px);
+    }
+    .dash-stat-label {
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+    .dash-stat-value {
+      font-family: var(--font-body);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      margin: 4px 0 2px;
+    }
+    .dash-stat-change {
+      font-size: 0.68rem;
+      font-weight: 600;
+    }
+    .dash-stat-change.positive { color: #27AE60; }
+    .dash-content-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 640px) {
+      .dash-content-row { grid-template-columns: 1.4fr 1fr; }
+    }
+    .dash-agenda, .dash-chart {
+      background: var(--sage-lighter);
+      border-radius: 10px;
+      padding: clamp(12px, 2vw, 16px);
+    }
+    .dash-section-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+    .dash-appointment {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .dash-appointment:last-child { border-bottom: none; }
+    .dash-apt-time {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--sage);
+      min-width: 38px;
+    }
+    .dash-apt-info { flex: 1; min-width: 0; }
+    .dash-apt-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .dash-apt-service {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .dash-apt-status {
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 50px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .dash-apt-status.confirmed { background: #E8F5E9; color: #2E7D32; }
+    .dash-apt-status.pending { background: #FFF8E1; color: #F57F17; }
+    .dash-bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 120px;
+      gap: 6px;
+      padding-top: 8px;
+    }
+    .dash-bar-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+    .dash-bar-col span {
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .dash-bar {
+      width: 100%;
+      max-width: 32px;
+      background: var(--sage);
+      border-radius: 4px 4px 0 0;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 640px) {
+      .dashboard-sidebar { display: none; }
+      .dashboard-body { min-height: 300px; }
+    }
+
+    /* ==============================
+       8. DEMO (Phone Mockup)
+    ============================== */
+    .demo-tabs-wrapper {
+      margin: 0 auto 1.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+      max-width: 100%;
+      text-align: center;
+    }
+    .demo-tabs-wrapper::-webkit-scrollbar { display: none; }
+    .demo-tabs {
+      display: inline-flex;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .demo-tab {
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .demo-tab:hover { border-color: var(--sage); color: var(--sage); }
+    .demo-tab.active {
+      background: var(--sage);
+      color: var(--white);
+      border-color: var(--sage);
+    }
+
+    .phone-stage {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    .phone-stage::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(43,94,78,0.1) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      filter: blur(30px);
+    }
+
+    .phone {
+      width: 300px;
+      height: 620px;
+      background: #0a0a0a;
+      border-radius: 42px;
+      padding: 9px;
+      position: relative;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.08),
+        0 25px 70px rgba(0,0,0,0.25),
+        0 0 50px rgba(43,94,78,0.12);
+      animation: phoneFloat 7s ease-in-out infinite;
+      z-index: 2;
+    }
+    @keyframes phoneFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .phone-island {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85px;
+      height: 22px;
+      background: #0a0a0a;
+      border-radius: 12px;
+      z-index: 20;
+    }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 34px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #ECE5DD;
+      text-align: left;
+    }
+    .phone-home {
+      position: absolute;
+      bottom: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 4px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 2px;
+    }
+
+    /* WhatsApp UI */
+    .wa-statusbar {
+      background: #075E54;
+      padding: 26px 16px 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 10.5px;
+      font-weight: 500;
+    }
+    .wa-status-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .wa-status-icons svg {
+      opacity: 0.85;
+    }
+    .wa-header {
+      background: #075E54;
+      padding: 6px 10px 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+    }
+    .wa-back {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-right: -4px;
+    }
+    .wa-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      color: white;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+    }
+    .wa-header-info { flex: 1; }
+    .wa-header-name {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .wa-header-status {
+      font-size: 11px;
+      opacity: 0.75;
+    }
+    .wa-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 0;
+      display: flex;
+      flex-direction: column;
+      transition: opacity 0.25s ease;
+      scrollbar-width: none;
+    }
+    .wa-messages::-webkit-scrollbar { display: none; }
+    .wa-messages.fading { opacity: 0; }
+
+    .wa-msg {
+      max-width: 84%;
+      padding: 6px 8px 2px;
+      margin: 2px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.4;
+      position: relative;
+      color: #111B21;
+      word-wrap: break-word;
+      animation: msgSlideIn 0.25s ease-out forwards;
+    }
+    @keyframes msgSlideIn {
+      from { opacity: 0; transform: translateY(6px) scale(0.97); }
+      to { opacity: 1; transform: none; }
+    }
+    .wa-msg--user {
+      background: #D9FDD3;
+      align-self: flex-end;
+      border-top-right-radius: 0;
+    }
+    .wa-msg--user::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -6px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid #D9FDD3;
+      border-bottom: 6px solid transparent;
+    }
+    .wa-msg--bot {
+      background: var(--white);
+      align-self: flex-start;
+      border-top-left-radius: 0;
+    }
+    .wa-msg--bot::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -6px;
+      width: 0;
+      height: 0;
+      border-right: 6px solid var(--white);
+      border-bottom: 6px solid transparent;
+    }
+    .wa-msg-text { white-space: pre-wrap; word-wrap: break-word; }
+    .wa-msg-meta {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 3px;
+      margin-top: 1px;
+      font-size: 10.5px;
+      color: #667781;
+    }
+    .wa-msg-check { color: #53BDEB; font-size: 12px; letter-spacing: -3px; }
+
+    /* Typing indicator */
+    .wa-typing {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      padding: 10px 14px;
+      background: var(--white);
+      border-radius: 8px;
+      border-top-left-radius: 0;
+      align-self: flex-start;
+      margin: 2px 10px;
+      animation: msgSlideIn 0.2s ease-out forwards;
+    }
+    .wa-typing span {
+      width: 7px;
+      height: 7px;
+      background: #8D949A;
+      border-radius: 50%;
+      animation: typingDot 1.4s ease-in-out infinite;
+    }
+    .wa-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .wa-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingDot {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    .wa-inputbar {
+      background: #F0F2F5;
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .wa-input-field {
+      flex: 1;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 7px 14px;
+      font-size: 12px;
+      color: #667781;
+    }
+    .wa-input-icon {
+      font-size: 16px;
+      opacity: 0.5;
+    }
+
+    .demo-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* ==============================
+       MOBILE OPTIMIZATIONS
+    ============================== */
+    @media (max-width: 640px) {
+      section { padding: clamp(3rem, 8vw, 5rem) 0; }
+
+      /* Hero tightening */
+      .hero { padding: 5.5rem 0 1.5rem; overflow: hidden; }
+      .hero::before, .hero::after { display: none; }
+      .hero-grid { gap: 1.5rem; }
+      .hero-badge { margin-bottom: 1.25rem; font-size: 0.75rem; padding: 6px 14px; }
+      .hero-title { font-size: 2.2rem; margin-bottom: 1rem; }
+      .hero-subtitle { font-size: 0.95rem; margin-bottom: 1.5rem; max-width: none; }
+      .hero-ctas { margin-bottom: 1.25rem; gap: 10px; }
+      .hero-channels { gap: 8px; }
+      .channel-pill { padding: 5px 12px; font-size: 0.72rem; }
+
+      /* Buttons */
+      .btn { padding: 12px 24px; font-size: 0.88rem; }
+      .btn-whatsapp { padding: 14px 32px; font-size: 0.95rem; }
+
+      /* Phone smaller on mobile */
+      .phone { width: 250px; height: 500px; border-radius: 36px; }
+      .phone-screen { border-radius: 28px; }
+      .phone-island { width: 72px; height: 20px; top: 12px; }
+      .phone-home { width: 90px; }
+      .phone-stage::before { width: 280px; height: 280px; }
+
+      /* WhatsApp UI scaled down */
+      .wa-msg { font-size: 12px; margin: 2px 8px; padding: 5px 7px 2px; }
+      .wa-msg-meta { font-size: 9.5px; }
+      .wa-header-name { font-size: 13px; }
+      .wa-header-status { font-size: 10px; }
+      .wa-statusbar { padding: 22px 12px 4px; font-size: 9.5px; }
+      .wa-header { padding: 5px 8px 8px; gap: 8px; }
+      .wa-avatar { width: 30px; height: 30px; font-size: 11px; }
+      .wa-inputbar { padding: 4px 6px; }
+      .wa-input-field { padding: 5px 10px; font-size: 11px; }
+      .wa-input-icon { font-size: 14px; }
+      .wa-typing { padding: 8px 12px; margin: 2px 8px; }
+      .wa-typing span { width: 6px; height: 6px; }
+
+      /* Tabs compact on mobile — wrap instead of scroll */
+      .demo-tabs-wrapper { overflow-x: visible; }
+      .demo-tabs { flex-wrap: wrap; white-space: normal; justify-content: center; }
+      .demo-tab { padding: 8px 14px; font-size: 0.78rem; }
+      .demo-label { font-size: 0.75rem; }
+
+      /* Stats and cards */
+      .stat-card { padding: 1.5rem 1.25rem; }
+      .stats-grid { gap: 1rem; }
+      /* Pricing */
+      .pricing-card { padding: 1.5rem; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-title { font-size: 1.9rem; }
+      .hero-subtitle { font-size: 0.9rem; }
+      .phone { width: 230px; height: 460px; border-radius: 33px; padding: 7px; }
+      .phone-screen { border-radius: 27px; }
+      .phone-island { width: 65px; height: 18px; top: 10px; }
+      .wa-msg { font-size: 11px; max-width: 88%; }
+    }
+
+    /* ==============================
+       9. HOW IT WORKS
+    ============================== */
+    .how-it-works {
+      background: var(--cream);
+    }
+    .how-it-works .container { text-align: center; }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      background: var(--sage);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+    }
+    .step-title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .step-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    @media (min-width: 768px) {
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+      .step { flex-direction: column; text-align: center; align-items: center; }
+    }
+
+    /* ==============================
+       11. VERTICALS
+    ============================== */
+    .verticals { background: var(--cream); }
+    .verticals .container { text-align: center; }
+    .tags-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 2.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .tag {
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
+    .tag:nth-child(odd) { background: var(--sage-lighter); color: var(--sage); }
+    .tag:nth-child(even) { background: var(--amber-light); color: var(--amber-dark); }
+    .tags-cloud .tag-more {
+      background: var(--white);
+      color: var(--text-secondary);
+      border: 1px dashed var(--border);
+      font-style: italic;
+    }
+
+    /* ==============================
+       12. PARTNERS
+    ============================== */
+    .partners {
+      background: var(--sage-light);
+    }
+    .partners .container { text-align: center; }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin: 2.5rem auto 2rem;
+      max-width: 900px;
+    }
+    .partner-card {
+      background: var(--white);
+      padding: 1.75rem;
+      border-radius: var(--radius-lg);
+      text-align: left;
+    }
+    .partner-card h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .partner-card p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .partner-icon { font-size: 1.4rem; margin-bottom: 0.75rem; display: block; }
+
+    @media (min-width: 640px) {
+      .partners-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ==============================
+       14. PRICING
+    ============================== */
+    .pricing { background: var(--white); }
+    .pricing .container { text-align: center; }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 3rem auto 0;
+      max-width: 780px;
+    }
+    @media (min-width: 640px) {
+      .pricing-cards { grid-template-columns: 1fr 1fr; }
+    }
+    .pricing-card {
+      padding: clamp(1.75rem, 4vw, 2.5rem);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--cream);
+      text-align: left;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+    }
+    .pricing-card.featured {
+      border-color: var(--sage);
+      border-width: 2px;
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--sage);
+      color: var(--white);
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pricing-plan-name {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      color: var(--charcoal);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .pricing-price span {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    .pricing-features {
+      list-style: none;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pricing-features li {
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--sage);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pricing-card .btn {
+      width: 100%;
+      text-align: center;
+    }
+    .pricing-note {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==============================
+       15. FINAL CTA
+    ============================== */
+    .cta-final {
+      background: var(--sage);
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      top: -300px;
+      right: -200px;
+      pointer-events: none;
+    }
+    .cta-final h2 {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .cta-final-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      opacity: 0.8;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-final-note {
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    /* ==============================
+       16. FOOTER
+    ============================== */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.5rem 0;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.5rem;
+    }
+    footer p { font-size: 0.82rem; line-height: 1.5; }
+
+    /* ==============================
+       17. SCROLL REVEAL
+    ============================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+    .reveal-d4 { transition-delay: 0.32s; }
+    .reveal-d5 { transition-delay: 0.40s; }
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">aura</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#que-es">Qué es Aura</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#pricing">Precio</a>
+        <a href="#cta-final" class="nav-cta-mobile">Contactar</a>
+      </div>
+      <a href="#cta-final" class="nav-cta">Contactar</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menú de navegación" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ==============================
+         1. HERO + DEMO
+    ============================== -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge reveal">
+              <span class="badge-pulse"></span>
+              Agentes de IA para negocios
+            </div>
+            <h1 class="hero-title reveal reveal-d1">Tu negocio<br>atiende solo</h1>
+            <p class="hero-subtitle reveal reveal-d2">Aura responde, agenda, vende y gestiona por vos. En todos tus canales, las 24 horas.</p>
+            <div class="hero-ctas reveal reveal-d2">
+              <a href="#como-funciona" class="btn btn-primary">Cómo funciona</a>
+              <a href="https://wa.me/5491158593438?text=Hola!%20Quiero%20saber%20más%20sobre%20Aura%20para%20mi%20negocio" class="btn btn-secondary" target="_blank" rel="noopener">Contactar</a>
+            </div>
+            <div class="hero-channels reveal reveal-d3">
+              <span class="channel-pill">WhatsApp</span>
+              <span class="channel-pill">Instagram</span>
+              <span class="channel-pill">Web Chat</span>
+              <span class="channel-pill">Email</span>
+            </div>
+            <div class="hero-trust reveal reveal-d3">
+              <span>Setup en pocas horas</span>
+              <span class="trust-dot"></span>
+              <span>Sin compromiso</span>
+              <span class="trust-dot"></span>
+              <span>Cancelás cuando quieras</span>
+            </div>
+            <div class="hero-demo-picker reveal reveal-d4">
+              <p class="demo-label">Mirá cómo funciona:</p>
+              <div class="demo-tabs-wrapper">
+                <div class="demo-tabs">
+                  <button class="demo-tab active" data-vertical="restaurante">🍽️ Restaurante</button>
+                  <button class="demo-tab" data-vertical="inmobiliaria">🏠 Inmobiliaria</button>
+                  <button class="demo-tab" data-vertical="estetica">✨ Estética</button>
+                  <button class="demo-tab" data-vertical="ecommerce">🛍️ E-commerce</button>
+                  <button class="demo-tab" data-vertical="financiera">💱 Financiera</button>
+                  <button class="demo-tab" data-vertical="asistente">🧠 Asistente</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-demo" id="demo">
+            <div class="phone-stage">
+              <div class="phone">
+                <div class="phone-island"></div>
+                <div class="phone-screen">
+                  <div class="wa-statusbar">
+                    <span>9:41</span>
+                    <span class="wa-status-icons">
+                      <svg width="17" height="11" viewBox="0 0 17 11" fill="white"><rect x="0" y="4" width="3" height="7" rx="0.5" opacity="0.4"/><rect x="4.5" y="3" width="3" height="8" rx="0.5" opacity="0.6"/><rect x="9" y="1.5" width="3" height="9.5" rx="0.5" opacity="0.8"/><rect x="13.5" y="0" width="3" height="11" rx="0.5"/></svg>
+                      <svg width="16" height="11" viewBox="0 0 16 11" fill="none"><rect x="0.5" y="0.5" width="12" height="10" rx="2" stroke="white" stroke-width="1"/><rect x="2" y="2" width="8" height="7" rx="1" fill="white"/><path d="M13.5 3.5v4a1.5 1.5 0 000-4z" fill="white"/></svg>
+                    </span>
+                  </div>
+                  <div class="wa-header">
+                    <span class="wa-back">‹</span>
+                    <div class="wa-avatar" id="waAvatar" style="background:#C0392B;">R</div>
+                    <div class="wa-header-info">
+                      <div class="wa-header-name" id="waName">Tu Restaurante</div>
+                      <div class="wa-header-status">en línea</div>
+                    </div>
+                  </div>
+                  <div class="wa-messages" id="waMessages"></div>
+                  <div class="wa-inputbar">
+                    <span class="wa-input-icon">☺</span>
+                    <div class="wa-input-field">Mensaje</div>
+                    <span class="wa-input-icon">📎</span>
+                    <span class="wa-input-icon">🎤</span>
+                  </div>
+                </div>
+                <div class="phone-home"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         2. PROBLEM / STATS
+    ============================== -->
+    <section class="problem">
+      <div class="container">
+        <span class="section-label reveal">El problema</span>
+        <h2 class="reveal">Tu negocio no para. Pero vos sí.</h2>
+        <p class="section-subtitle centered reveal">Cada noche, cada feriado, cada vez que estás ocupado — hay clientes escribiéndote que nunca van a recibir respuesta.</p>
+        <div class="stats-grid">
+          <div class="stat-card reveal">
+            <div class="stat-number"><span class="counter" data-target="67">0</span>%</div>
+            <p class="stat-description">de los clientes eligen al primero que les contesta. No al mejor — al más rápido.</p>
+          </div>
+          <div class="stat-card reveal reveal-d1">
+            <div class="stat-number"><span class="counter" data-target="23">0</span> hs</div>
+            <p class="stat-description">es la hora pico de consultas por WhatsApp. Justo cuando vos ya cerraste.</p>
+          </div>
+          <div class="stat-card reveal reveal-d2">
+            <div class="stat-number">$<span class="counter" data-target="2400">0</span></div>
+            <p class="stat-description">USD/mes pierde en promedio un negocio por consultas sin responder. Clientes que ya estaban listos para comprar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         3. WHAT IS AURA
+    ============================== -->
+    <section id="que-es" class="what-is">
+      <div class="container">
+        <span class="section-label reveal">Qué es Aura</span>
+        <h2 class="reveal">Un empleado que nunca duerme<br>y atiende todos tus canales a la vez.</h2>
+        <p class="what-is-text reveal">Aura es un agente de inteligencia artificial que aprende tu negocio — tus precios, tus servicios, tu forma de hablar — y atiende a cada cliente como si fueras vos.</p>
+
+        <div class="transform-grid">
+          <div class="transform-card reveal">
+            <div class="transform-card-header">
+              <span class="transform-card-icon">💬</span>
+              <span class="transform-card-title">Responder</span>
+            </div>
+            <div class="transform-row">
+              <div class="transform-before">
+                <span class="transform-label">Antes</span>
+                Contestás cuando podés. A veces a tiempo, a veces demasiado tarde.
+              </div>
+              <div class="transform-after">
+                <span class="transform-label">Con Aura</span>
+                Cada mensaje se responde en segundos, a cualquier hora, en WhatsApp, Instagram, web o email.
+              </div>
+            </div>
+          </div>
+
+          <div class="transform-card reveal reveal-d1">
+            <div class="transform-card-header">
+              <span class="transform-card-icon">⚡</span>
+              <span class="transform-card-title">Gestionar</span>
+            </div>
+            <div class="transform-row">
+              <div class="transform-before">
+                <span class="transform-label">Antes</span>
+                Agendás turnos a mano, pasás presupuestos por chat, te olvidás de confirmar.
+              </div>
+              <div class="transform-after">
+                <span class="transform-label">Con Aura</span>
+                Agenda turnos, toma pedidos, envía cotizaciones, cobra y manda recordatorios — solo.
+              </div>
+            </div>
+          </div>
+
+          <div class="transform-card reveal reveal-d2">
+            <div class="transform-card-header">
+              <span class="transform-card-icon">📊</span>
+              <span class="transform-card-title">Controlar</span>
+            </div>
+            <div class="transform-row">
+              <div class="transform-before">
+                <span class="transform-label">Antes</span>
+                No sabés cuántas consultas recibís, cuántas perdés, ni qué preguntan.
+              </div>
+              <div class="transform-after">
+                <span class="transform-label">Con Aura</span>
+                Dashboard en tiempo real con cada conversación, cada métrica y la opción de intervenir cuando quieras.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="transform-closing reveal">Vos ponés las reglas. Aura las ejecuta.</p>
+
+        <!-- Dashboard mockup -->
+        <div class="dashboard-showcase reveal">
+          <div class="dashboard-intro">
+            <span class="section-label">Dashboard incluido</span>
+            <h3 class="dashboard-title">Todo tu negocio en una pantalla</h3>
+            <p class="dashboard-subtitle">Cada agente viene con un panel de control donde ves métricas, agenda, conversaciones e ingresos en tiempo real.</p>
+          </div>
+          <div class="dashboard-window">
+            <div class="dashboard-topbar">
+              <div class="dashboard-dots"><span></span><span></span><span></span></div>
+              <div class="dashboard-url">app.aura.com.ar/tu-negocio</div>
+            </div>
+            <div class="dashboard-body">
+              <div class="dashboard-sidebar">
+                <div class="dash-logo">A</div>
+                <div class="dash-nav-item active">📊</div>
+                <div class="dash-nav-item">📅</div>
+                <div class="dash-nav-item">💬</div>
+                <div class="dash-nav-item">👥</div>
+                <div class="dash-nav-item">⚙️</div>
+              </div>
+              <div class="dashboard-main">
+                <div class="dash-header">
+                  <div>
+                    <div class="dash-greeting">Tu Negocio</div>
+                    <div class="dash-date">Martes 25 Feb 2026</div>
+                  </div>
+                </div>
+                <div class="dash-stats-row">
+                  <div class="dash-stat">
+                    <div class="dash-stat-label">Turnos hoy</div>
+                    <div class="dash-stat-value">12</div>
+                    <div class="dash-stat-change positive">+3 vs ayer</div>
+                  </div>
+                  <div class="dash-stat">
+                    <div class="dash-stat-label">Mensajes</div>
+                    <div class="dash-stat-value">47</div>
+                    <div class="dash-stat-change positive">100% respondidos</div>
+                  </div>
+                  <div class="dash-stat">
+                    <div class="dash-stat-label">Ingresos del día</div>
+                    <div class="dash-stat-value">$185k</div>
+                    <div class="dash-stat-change positive">+22% vs semana</div>
+                  </div>
+                  <div class="dash-stat">
+                    <div class="dash-stat-label">Ocupación</div>
+                    <div class="dash-stat-value">78%</div>
+                    <div class="dash-stat-change positive">Mejor mes</div>
+                  </div>
+                </div>
+                <div class="dash-content-row">
+                  <div class="dash-agenda">
+                    <div class="dash-section-title">Próximos turnos</div>
+                    <div class="dash-appointment">
+                      <div class="dash-apt-time">10:30</div>
+                      <div class="dash-apt-info">
+                        <div class="dash-apt-name">María González</div>
+                        <div class="dash-apt-service">Botox — $25.000</div>
+                      </div>
+                      <div class="dash-apt-status confirmed">Confirmado</div>
+                    </div>
+                    <div class="dash-appointment">
+                      <div class="dash-apt-time">11:30</div>
+                      <div class="dash-apt-info">
+                        <div class="dash-apt-name">Lucía Fernández</div>
+                        <div class="dash-apt-service">Limpieza facial — $15.000</div>
+                      </div>
+                      <div class="dash-apt-status confirmed">Confirmado</div>
+                    </div>
+                    <div class="dash-appointment">
+                      <div class="dash-apt-time">13:00</div>
+                      <div class="dash-apt-info">
+                        <div class="dash-apt-name">Camila Ruiz</div>
+                        <div class="dash-apt-service">Masaje descontracturante — $20.000</div>
+                      </div>
+                      <div class="dash-apt-status pending">Pendiente</div>
+                    </div>
+                  </div>
+                  <div class="dash-chart">
+                    <div class="dash-section-title">Conversaciones (7 días)</div>
+                    <div class="dash-bars">
+                      <div class="dash-bar-col"><div class="dash-bar" style="height:45%"></div><span>L</span></div>
+                      <div class="dash-bar-col"><div class="dash-bar" style="height:65%"></div><span>M</span></div>
+                      <div class="dash-bar-col"><div class="dash-bar" style="height:55%"></div><span>X</span></div>
+                      <div class="dash-bar-col"><div class="dash-bar" style="height:80%"></div><span>J</span></div>
+                      <div class="dash-bar-col"><div class="dash-bar" style="height:90%"></div><span>V</span></div>
+                      <div class="dash-bar-col"><div class="dash-bar" style="height:70%"></div><span>S</span></div>
+                      <div class="dash-bar-col"><div class="dash-bar" style="height:35%"></div><span>D</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         4. HOW IT WORKS
+    ============================== -->
+    <section id="como-funciona" class="how-it-works">
+      <div class="container">
+        <span class="section-label reveal">Cómo funciona</span>
+        <h2 class="reveal">Activar tu agente es simple</h2>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Contanos tu negocio</div>
+              <p class="step-desc">Servicios, precios, horarios, reglas, preguntas frecuentes. Todo lo que necesitamos para entrenar a tu agente.</p>
+            </div>
+          </div>
+          <div class="step reveal reveal-d1">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">Entrenamos a Aura</div>
+              <p class="step-desc">Configuramos el agente con tu información, tu tono y tus acciones. En pocas horas está listo.</p>
+            </div>
+          </div>
+          <div class="step reveal reveal-d2">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">Se activa y trabaja</div>
+              <p class="step-desc">Lo conectamos a tus canales y empieza a atender clientes al instante. Vos monitoreás desde el dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         7. VERTICALS
+    ============================== -->
+    <section class="verticals">
+      <div class="container">
+        <span class="section-label reveal">Para quién es</span>
+        <h2 class="reveal">Para cualquier negocio</h2>
+        <p class="section-subtitle centered reveal">Si tu negocio atiende clientes, Aura puede ayudarte.</p>
+        <div class="tags-cloud reveal">
+          <span class="tag">Centros de estética</span>
+          <span class="tag">Barberías</span>
+          <span class="tag">Restaurantes</span>
+          <span class="tag">Inmobiliarias</span>
+          <span class="tag">E-commerce</span>
+          <span class="tag">Tiendas de ropa</span>
+          <span class="tag">Financieras</span>
+          <span class="tag">Nail bars</span>
+          <span class="tag">Clínicas</span>
+          <span class="tag">Dentistas</span>
+          <span class="tag">Veterinarias</span>
+          <span class="tag">Gimnasios</span>
+          <span class="tag">Yoga & pilates</span>
+          <span class="tag">Fotógrafos</span>
+          <span class="tag">Tattoo shops</span>
+          <span class="tag">Spas</span>
+          <span class="tag">Asistente personal</span>
+          <span class="tag tag-more">y mucho más...</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         10. PRICING
+    ============================== -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+        <span class="section-label reveal">Precio</span>
+        <h2 class="reveal">Planes simples, sin sorpresas</h2>
+        <p class="section-subtitle centered reveal">Setup en pocas horas. Sin contratos. Cancelá cuando quieras.</p>
+        <div class="pricing-cards">
+          <div class="pricing-card reveal">
+            <div class="pricing-plan-name">Esencial</div>
+            <div class="pricing-price">USD 79 <span>/mes</span></div>
+            <ul class="pricing-features">
+              <li>1 canal (WhatsApp)</li>
+              <li>Hasta 500 conversaciones/mes</li>
+              <li>Agente personalizado con tu info</li>
+              <li>Dashboard incluido</li>
+              <li>Soporte por email</li>
+            </ul>
+            <a href="https://wa.me/5491158593438?text=Hola!%20Quiero%20activar%20el%20plan%20Esencial%20de%20Aura" class="btn btn-secondary" target="_blank" rel="noopener">Empezar</a>
+          </div>
+          <div class="pricing-card featured reveal reveal-d1">
+            <span class="pricing-badge">Popular</span>
+            <div class="pricing-plan-name">Pro</div>
+            <div class="pricing-price">USD 199 <span>/mes</span></div>
+            <ul class="pricing-features">
+              <li>Multicanal (WhatsApp, IG, Web, Email)</li>
+              <li>Conversaciones ilimitadas</li>
+              <li>Integraciones (calendarios, CRM, pagos)</li>
+              <li>Dashboard completo con métricas</li>
+              <li>Soporte prioritario por WhatsApp</li>
+            </ul>
+            <a href="https://wa.me/5491158593438?text=Hola!%20Quiero%20activar%20el%20plan%20Pro%20de%20Aura" class="btn btn-primary" target="_blank" rel="noopener">Empezar</a>
+          </div>
+        </div>
+        <p class="pricing-note reveal">Todos los planes incluyen setup gratuito y entrenamiento del agente.</p>
+      </div>
+    </section>
+
+    <!-- ==============================
+         11. CTA FINAL
+    ============================== -->
+    <section id="cta-final" class="cta-final">
+      <div class="container">
+        <h2 class="reveal">¿Listo para que tu<br>negocio atienda solo?</h2>
+        <p class="cta-final-sub reveal">Escribinos por WhatsApp y te armamos una propuesta personalizada en menos de 2 horas.</p>
+        <a href="https://wa.me/5491158593438?text=Hola!%20Quiero%20saber%20más%20sobre%20Aura%20para%20mi%20negocio" class="btn btn-whatsapp reveal" target="_blank" rel="noopener">💬 Hablar por WhatsApp</a>
+        <p class="cta-final-note reveal">Sin compromiso · Respuesta en menos de 2 horas</p>
+      </div>
+    </section>
+
+    <!-- ==============================
+         PARTNERS
+    ============================== -->
+    <section class="partners">
+      <div class="container">
+        <span class="section-label reveal">Programa de partners</span>
+        <h2 class="reveal">¿Tenés una agencia?</h2>
+        <p class="section-subtitle centered reveal">Revendé Aura a tu cartera de clientes. Vos ponés tu margen, nosotros hacemos el resto.</p>
+        <div class="partners-grid">
+          <div class="partner-card reveal">
+            <span class="partner-icon">💰</span>
+            <h3>Margen propio</h3>
+            <p>Definís tu precio de reventa. El margen es 100% tuyo. Sin sorpresas.</p>
+          </div>
+          <div class="partner-card reveal reveal-d1">
+            <span class="partner-icon">🛠️</span>
+            <h3>Setup incluido</h3>
+            <p>Nos encargamos de la configuración y el entrenamiento de cada agente. Vos vendés, nosotros ejecutamos.</p>
+          </div>
+          <div class="partner-card reveal reveal-d2">
+            <span class="partner-icon">🚀</span>
+            <h3>Escalá sin límite</h3>
+            <p>Sumá clientes sin sumar equipo técnico. Cada agente nuevo es más revenue para tu agencia.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/5491158593438?text=Hola!%20Quiero%20saber%20más%20sobre%20el%20programa%20de%20partners%20de%20Aura" class="btn btn-primary reveal" target="_blank" rel="noopener">Quiero ser Partner</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">aura</div>
+      <p>Agentes de IA para negocios · Buenos Aires, Argentina 🇦🇷</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ==============================
+       CONVERSATIONS DATA
+    ============================== */
+    const verticals = {
+      restaurante: {
+        name: 'Tu Restaurante',
+        initial: 'R',
+        color: '#C0392B',
+        messages: [
+          { sender: 'user', text: 'Hola! Quiero reservar mesa para 4 el sábado a la noche', time: '14:32' },
+          { sender: 'bot', text: 'Hola! 🍝 Tenemos disponibilidad. Te ofrezco estos horarios:', time: '14:32' },
+          { sender: 'bot', text: '📅 Sábado 1/03\n🕐 20:30 — Mesa interior ✅\n🕐 21:00 — Mesa terraza ✅\n🕐 21:30 — Mesa interior ✅\n\nCuál preferís? La terraza está hermosa estos días ☀️', time: '14:32' },
+          { sender: 'user', text: '21:00 en la terraza!', time: '14:33' },
+          { sender: 'bot', text: 'Excelente! 🌟\n\n✅ Reserva confirmada\n👥 4 personas\n📅 Sáb 1/03 — 21:00\n📍 Mesa terraza\n\nHonduras 4999, Palermo\nTe esperamos! 🤍', time: '14:33' }
+        ]
+      },
+      inmobiliaria: {
+        name: 'Tu Inmobiliaria',
+        initial: 'I',
+        color: '#2E86C1',
+        messages: [
+          { sender: 'user', text: 'Hola, vi un depto de 3 ambientes en Palermo en su página. Todavía está disponible?', time: '10:15' },
+          { sender: 'bot', text: 'Hola! Sí, el departamento sigue disponible. Te paso los detalles:', time: '10:15' },
+          { sender: 'bot', text: '🏠 3 amb — Palermo Soho\n📐 75 m² · Piso 8°\n🛏️ 2 dormitorios · 1 baño\n☀️ Balcón con vista abierta\n🏋️ Amenities: gym, pileta, SUM\n💰 USD 185.000\n\nQuerés coordinar una visita?', time: '10:15' },
+          { sender: 'user', text: 'Sí! Puede ser esta semana?', time: '10:16' },
+          { sender: 'bot', text: 'Perfecto!\n📅 Jueves 27/02 — 11:00 o 16:00 hs\n📅 Viernes 28/02 — 10:00 o 14:00 hs\n\nDecime cuál te queda bien y te confirmo con el asesor 👍', time: '10:16' }
+        ]
+      },
+      estetica: {
+        name: 'Tu Centro Estético',
+        initial: 'E',
+        color: '#8E44AD',
+        messages: [
+          { sender: 'user', text: 'Hola! Quiero sacar turno para botox 😊', time: '11:20' },
+          { sender: 'bot', text: 'Hola! 😊 Qué bueno! El botox tiene un valor de $25.000 y dura 30 minutos. Te paso los horarios disponibles:', time: '11:20' },
+          { sender: 'bot', text: '📅 Jueves 27/02\n• 10:30 hs ✅\n• 15:00 hs ✅\n\n📅 Viernes 28/02\n• 09:00 hs ✅\n• 11:30 hs ✅\n\nCuál te queda mejor? 🙌', time: '11:20' },
+          { sender: 'user', text: 'Jueves a las 10:30!', time: '11:21' },
+          { sender: 'bot', text: 'Listo! ✨\n\n✅ Turno confirmado\n📋 Botox\n📅 Jue 27/02 — 10:30 hs\n💰 $25.000\n📍 Gurruchaga 1847, Palermo\n\nTe mando recordatorio mañana! 💫', time: '11:21' }
+        ]
+      },
+      ecommerce: {
+        name: 'Tu Tienda',
+        initial: 'T',
+        color: '#E67E22',
+        messages: [
+          { sender: 'user', text: 'Hola! Tienen la campera puffer negra en talle M?', time: '16:45' },
+          { sender: 'bot', text: 'Hola! 🖤 Sí, disponible en M. Te paso los detalles:', time: '16:45' },
+          { sender: 'bot', text: '🧥 Puffer Essential — Negro\n📏 Talle M ✅\n💰 $45.000\n🚚 Envío gratis a CABA\n📦 24-48 hs\n\nQuerés que te arme el pedido? Tarjeta, transferencia o MercadoPago 💳', time: '16:45' },
+          { sender: 'user', text: 'Dale, por transferencia', time: '16:46' },
+          { sender: 'bot', text: 'Genial! 📦\n\n🧥 Puffer Essential Negro — M\n💰 $45.000\n🏦 Alias: TU.TIENDA\n\nCuando hagas la transferencia mandame el comprobante y te despacho al toque! 🚀', time: '16:46' }
+        ]
+      },
+      financiera: {
+        name: 'Tu Financiera',
+        initial: 'F',
+        color: '#27AE60',
+        messages: [
+          { sender: 'user', text: 'Buenas, a cuánto el blue hoy?', time: '09:30' },
+          { sender: 'bot', text: 'Buenas! Cotizaciones de hoy:', time: '09:30' },
+          { sender: 'bot', text: '💵 Pizarra 25/02/2026\n\n🔵 Blue: Compra $1.215 · Venta $1.235\n🟢 MEP: Compra $1.198 · Venta $1.210\n💶 Euro Blue: Compra $1.290 · Venta $1.320\n\n⏰ Actualizadas 14:00\nQuerés operar? 💰', time: '09:30' },
+          { sender: 'user', text: 'Sí, quiero vender 500 usd blue', time: '09:31' },
+          { sender: 'bot', text: 'Perfecto!\n\n💵 Venta: 500 USD Blue\n💰 $1.215 c/u\n🏦 Total: $607.500 ARS\n\nPodés venir hoy hasta las 18hs\n📍 Av. Córdoba 1250, CABA\n\nCotización reservada 30 min. Confirmás? ✅', time: '09:31' }
+        ]
+      },
+      asistente: {
+        name: 'Aura',
+        initial: '',
+        color: '#2B5E4E',
+        image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABQAFADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDyv+dGewoPAx370Hj610Hjh06/lQCfp9KEQucAZNW4LTd6sfbp+dJtLcuMG9ioBSjIPStmLTXYcRD8s0smmSqOYx/3zisnWibKhOxkBj0Jz9aUMD0OD6VZmtCM8FT79KqOhUkHjFUmnsQ4uO48N60u6oc5+tAPGM07C5gHHNIq5OMUZ4wasWiZbNU3ZERV2W7C0MhCAfU/0rsdE0JSqtIABWZokMcaq7YrdOpiJcA4ArysRVnJ2ie5hKNOK5pnc/D/AMIWut+ILexMeYV/eXDekYPP58D8as+OvB1no2u3Fl5YEDHzLdvWMngfhyPwrp/hljQPDX2q6Iju7xfOmLHHlxgZVT6YHJ9z7U74jyDXPD32m1ZZLq1XzoCpz5iEZZR65HI9x715jrQty31vuexGnK/Ny+7bb9TxfXfDihWaIAiuH1KxMTFWHTpXoKa0si7WIINYfiCGKdWkjxzXoYerUi7SPMxdGlUXNA4J1Ktg0h55q1fx7Xz+dVB3FevF3R8/KNmHU1esuCPrVHBzVq3YLSnsOm9TdW72IADit7wDZf2xrqvMu60tMSzZ6Mc/Kn4n9Aa4h5SxAGSTwAO9ew+EdPXRNDitHwLiQ+bckf3yOn4Dj868zGyVGnpuz28spvEVve+GOr/RC/FLxQ9ppg06KQie9B34PKxZ5/M8fTNQ/DbxPJdaWdOeU+fZAbMnkxZ4/wC+Tx9CK5rU/C2ua7rM9/fXNraLK2EQOZWRBwqgAY6e/XNCXXhzwRdCS3Murasvytl8LGD97IHAOO3J+lcioUnQ9lHWW+nf128julisRHFPET92G2vb03v1LXi7T4NHvpNSnYLbXJL2lsOGd/4gf7sannPfIA7kcwuoF1IJ616J4i01fE+hO8EomnlQT2knq2MgewI+X/8AVXj6ysrEMCpBwQRgg+ldeCaq07PdbnBmMXh6t4/DLVf1/WhLqB3En3rPJ+arM8m4VVPWvTgrI8ao7sfSgkdKUA4zRg09GI6LwLYibU/7RnXMNqQUB6NJ/D+XX8q6rWPFNppknlziaWYruEcYHQ9Mk9P1ridP1+7sLJLWC3ttiEnLK2WJPJPPX/Cs29uZby7luZ2Bkkbc2Og9h7CuOWG9rU5p7Ho08b9Xo8tLfqbeteMdV1BWhhcWUDcFYidzD3br+WK5wUuMUgrqhShTVoqxwVa1SrLmm7s9O+DutedFJoU7/vIczW2T1TPzKPoefoT6Vl/F3QTputJq9umLTUCS+Bwkw+8P+Bfe/wC+q4/Sr+50zUrfULNwk9vIHQkZGfQjuCMgj0NdF4g8e6vrmkS6XfWmm+RIVbKQsGRgcgqd3B7fQmuF4WpTxXtafwvf+vxPSWOpVcF7Ctfmj8L/AK+77jlGbNMpxpCK9I8e5aCkcgUpTjNWljp3lHsKw5zr9myiV9aYy81fMQ9KjaHv1pqZLplEqaQirLR47VGy1akQ4kNHvTypBpO3vVbkNDKPenY9e9NbjmmQf//Z',
+        messages: [
+          { sender: 'user', text: 'Hola! Cuántas consultas tuve hoy?', time: '18:30' },
+          { sender: 'bot', text: 'Hola! Hoy atendí 34 consultas 📊\n\n✅ 28 resueltas automáticamente\n👤 6 derivadas a tu equipo', time: '18:30' },
+          { sender: 'user', text: 'Genial, y mañana qué tengo?', time: '18:31' },
+          { sender: 'bot', text: '📅 Mañana jueves:\n🕐 10:00 — 3 turnos confirmados\n🕐 14:00 — Reunión con proveedor\n🕐 17:00 — 2 turnos confirmados\n\nTe recuerdo algo más? 😊', time: '18:31' },
+          { sender: 'user', text: 'Mandales un recordatorio a los de mañana', time: '18:32' },
+          { sender: 'bot', text: 'Listo! ✅ Envié recordatorio a los 5 turnos de mañana por WhatsApp.', time: '18:32' }
+        ]
+      }
+    };
+
+    /* ==============================
+       DOM REFS
+    ============================== */
+    const waMessages = document.getElementById('waMessages');
+    const waName = document.getElementById('waName');
+    const waAvatar = document.getElementById('waAvatar');
+    const demoTabs = document.querySelectorAll('.demo-tab');
+
+    /* ==============================
+       CHAT DEMO ENGINE
+    ============================== */
+    let currentVertical = 'restaurante';
+    let animationTimeouts = [];
+    let demoStarted = false;
+
+    function clearChat() {
+      animationTimeouts.forEach(t => clearTimeout(t));
+      animationTimeouts = [];
+      waMessages.innerHTML = '';
+    }
+
+    function updateHeader(key) {
+      const v = verticals[key];
+      waName.textContent = v.name;
+      if (v.image) {
+        waAvatar.textContent = '';
+        waAvatar.style.background = 'url(' + v.image + ') center/cover';
+      } else {
+        waAvatar.textContent = v.initial;
+        waAvatar.style.background = v.color;
+        waAvatar.style.backgroundImage = 'none';
+      }
+    }
+
+    function addMessage(msg) {
+      const el = document.createElement('div');
+      el.className = 'wa-msg wa-msg--' + msg.sender;
+
+      const textDiv = document.createElement('div');
+      textDiv.className = 'wa-msg-text';
+      textDiv.textContent = msg.text;
+      el.appendChild(textDiv);
+
+      const metaDiv = document.createElement('div');
+      metaDiv.className = 'wa-msg-meta';
+      const timeSpan = document.createElement('span');
+      timeSpan.textContent = msg.time;
+      metaDiv.appendChild(timeSpan);
+      if (msg.sender === 'user') {
+        const checkSpan = document.createElement('span');
+        checkSpan.className = 'wa-msg-check';
+        checkSpan.textContent = '✓✓';
+        metaDiv.appendChild(checkSpan);
+      }
+      el.appendChild(metaDiv);
+
+      waMessages.appendChild(el);
+      waMessages.scrollTop = waMessages.scrollHeight;
+    }
+
+    function showTyping() {
+      const el = document.createElement('div');
+      el.className = 'wa-typing';
+      el.id = 'typingIndicator';
+      el.innerHTML = '<span></span><span></span><span></span>';
+      waMessages.appendChild(el);
+      waMessages.scrollTop = waMessages.scrollHeight;
+    }
+
+    function hideTyping() {
+      const el = document.getElementById('typingIndicator');
+      if (el) el.remove();
+    }
+
+    function playConversation(key) {
+      const msgs = verticals[key].messages;
+      let delay = 600;
+
+      msgs.forEach((msg, i) => {
+        if (msg.sender === 'bot') {
+          // Show typing first
+          const t1 = setTimeout(() => showTyping(), delay);
+          animationTimeouts.push(t1);
+
+          const typingDuration = Math.min(Math.max(msg.text.length * 12, 900), 2400);
+          delay += typingDuration;
+
+          // Then show message
+          const t2 = setTimeout(() => {
+            hideTyping();
+            addMessage(msg);
+          }, delay);
+          animationTimeouts.push(t2);
+          delay += 500;
+        } else {
+          const t = setTimeout(() => addMessage(msg), delay);
+          animationTimeouts.push(t);
+          delay += 900;
+        }
+      });
+    }
+
+    function switchVertical(key) {
+      if (key === currentVertical && waMessages.children.length > 0) return;
+      currentVertical = key;
+
+      // Update tabs
+      demoTabs.forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.vertical === key);
+      });
+
+      // Fade out, then clear and play new
+      waMessages.classList.add('fading');
+      setTimeout(() => {
+        clearChat();
+        updateHeader(key);
+        waMessages.classList.remove('fading');
+        playConversation(key);
+      }, 280);
+    }
+
+    // Tab click handlers
+    demoTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        demoStarted = true;
+        switchVertical(tab.dataset.vertical);
+      });
+    });
+
+    // Load default vertical
+    switchVertical('restaurante');
+    demoStarted = true;
+
+    /* ==============================
+       SCROLL REVEAL & COUNTERS
+    ============================== */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Counter animation
+    function animateCounter(el, target, duration) {
+      const prefix = el.dataset.prefix || '';
+      let start = null;
+      const step = (ts) => {
+        if (!start) start = ts;
+        const progress = Math.min((ts - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    let countersAnimated = false;
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countersAnimated) {
+          countersAnimated = true;
+          document.querySelectorAll('.counter').forEach(c => {
+            const target = parseInt(c.dataset.target);
+            animateCounter(c, target, 1600);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const statsSection = document.querySelector('.stats-grid');
+    if (statsSection) counterObserver.observe(statsSection);
+
+    // Default vertical already loaded via switchVertical('restaurante')
+
+    /* ==============================
+       NAVIGATION
+    ============================== */
+    const nav = document.querySelector('nav');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('navHamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('nav-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    function closeMobileMenu() {
+      navLinks.classList.remove('mobile-open');
+      hamburger.classList.remove('active');
+      nav.classList.remove('nav-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    // Smooth scroll for anchor links + close mobile menu
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          closeMobileMenu();
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
